@@ -20,12 +20,14 @@ public class CandyScript : MonoBehaviour
     { if(collider.gameObject.tag == "Player")
         {
             //Increment Score
+            GameManager.instance.IncrementScore();
             Destroy(gameObject);
                 }
     //when player misses the candy it should get destroyed
     else if(collider.gameObject.tag == "Boundary")
         {
             //Decrease lives when a cangy is missed
+            GameManager.instance.DecreaseLife();
             Destroy(gameObject);
         }
     }
